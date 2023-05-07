@@ -1,5 +1,4 @@
 const router = require('express').Router()
-// require('../views/places/index')
 
 // GET /places
 router.get('/', (req,res) => {
@@ -17,6 +16,14 @@ router.get('/', (req,res) => {
         pic: '/images/cat-cafe.jpg'
       }]      
     res.render('places/index', { places })
+})
+
+router.get('/new', (req, res) => {
+    res.render('places/new')
+})
+
+router.get('/:id', (req, res) => {
+    res.send('/places/:id')
 })
 
 module.exports = router
