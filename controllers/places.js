@@ -8,7 +8,6 @@ router.get('/', (req,res) => {
 
 router.post('/', (req, res) => {
     if (!req.body.pic) {
-        // default image
         req.body.pic = 'http://placekitten.com/400/400'
     }
     if (!req.body.city) {
@@ -19,14 +18,24 @@ router.post('/', (req, res) => {
     }
     places.push(req.body)
     res.redirect('/places')
-  })  
+})  
 
 router.get('/new', (req, res) => {
     res.render('places/new')
 })
 
 router.get('/:id', (req, res) => {
-    res.send('places/:id')
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+    res.render('error404')
+    }
+    else if (!places[id]) {
+    res.render('error404')
+    }
+    else {
+    res.render('places/show', { place: places[id] })
+    }
 })
+  
 
 module.exports = router
