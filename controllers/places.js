@@ -19,15 +19,16 @@ router.get('/', (req,res) => {
 })
 
 router.post('/', (req, res) => {
-    res.send('POST /places stub')
-})
+    console.log(req.body)
+    res.send('POST /places')
+  })  
 
 router.get('/new', (req, res) => {
     res.render('places/new')
 })
 
 router.get('/:id', (req, res) => {
-    res.send('/places/:id')
+    res.send('places/:id')
 })
 
 module.exports = router
