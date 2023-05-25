@@ -3,6 +3,10 @@ h1 {
     color: cornflowerblue;
 }
 
+h2 {
+    color: skyblue;
+}
+
 img {
     max-width: 50%;
     max-height: 50%;
