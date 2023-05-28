@@ -13,14 +13,14 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  db.Place.create(req.body)
-  .then(() => {
-    res.redirect('/places')
-  })
-  .catch(err => {
-    console.log(err)
-    res.render('error404')
-  })
+    db.Place.create(req.body)
+    .then(() => {
+        res.redirect('/places')
+    })
+    .catch(err => {
+        console.log(err)
+        res.render('error404')
+    })
 })
 
 router.get('/new', (req, res) => {
