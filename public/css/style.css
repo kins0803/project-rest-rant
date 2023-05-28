@@ -4,12 +4,16 @@ h1 {
 }
 
 h2 {
-    color: skyblue;
+    color: #00BFFF;
+}
+
+h3, h4 {
+    color: #414656;
+    font-size: large;
 }
 
 img {
-    max-width: 50%;
-    max-height: 50%;
+    height: 20em
 }
 
 nav {
@@ -48,4 +52,7 @@ main {
     margin-left: 20px;
     background-color: white;
 }
-  
+
+div {
+    padding: 20px;
+}
