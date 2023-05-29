@@ -7,6 +7,7 @@ function show (data) {
       No comments yet!
     </h3>
   )
+
   let rating = (
     <h3 className='inactive'>
       Not yet rated
@@ -55,9 +56,6 @@ function show (data) {
                   Rating
                 </h2>
                 {rating}
-                <h3>
-                  Not Rated
-                </h3>
                 <h2>
                   Description
                 </h2>
@@ -67,10 +65,10 @@ function show (data) {
                 <h4>
                   Serving { data.place.cuisines }
                 </h4>
-                <a href={`/places/${data.id}/edit`} className='btn btn-warning'> 
+                <a href={`/places/${data.place.id}/edit`} className='btn btn-warning'> 
                   Edit
                 </a>  
-                <form method='POST' action={`/places/${data.id}?_method=DELETE`}> 
+                <form method='POST' action={`/places/${data.place.id}?_method=DELETE`}> 
                   <button type='submit' className='btn btn-danger'>
                     Delete
                   </button>
